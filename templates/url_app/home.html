@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Csr Shortener</title>
+<link rel="stylesheet" href="{% static  'url_app/css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'url_app/css/bootstrap/css/bootstrap.min.css'%}">
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+</script>
+<style media="screen">
+body{
+font-family: 'Poppins', sans-serif;
+background: linear-gradient(to bottom right,#42275a,#ffb88c);
+color:white;
+}
+
+</style>
+
+<!--
+/*Font-awesome integration*/
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+/*Google font integration*/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+#contact{
+  background-color:#f1f1f1;
+}
+
+#contact .row{
+  margin-bottom:30px;
+}
+
+@media (max-width: 768px) {
+  #contact iframe {
+      margin-bottom: 15px;
+  }
+
+}
+-->
+  </head>
+  <body>
+  <div class="container">
+      <div class="text-center">
+        <main role="main" class="inner cover">
+        <h1 class="cover-heading">CSR Shortener</h1>
+        <p class="lead">Shortern Your URl's to share ease with Other's</p>
+
+      </main>
+      {% block content %}
+
+            <div class="form-group">
+              <form method="post">
+                {% csrf_token %}
+                {{form}}
+                <br>
+                <button type="submit" class="btn btn-primary">Shortern Url</button>
+              </form>
+           </div>
+      </div>
+  </div>
+
+
+  <footer>
+
+    <div class="container">
+      <h3>About CSR Shortener</h3>
+          <footer class="mastfoot mt-auto">
+            <div class="inner">
+              <p class="lead">Our Shortening Service provides free Shortening your large Url's with short and ease to share with
+                 others and in Social Networking Sites also.We wont Provide any Ads in Shorterned Url's like Other Websites Do.We do keep our customer fell good to use our services</p>
+           </div>
+        </footer>
+    </div>
+
+    <!--
+    <section id="contact">
+      <div class="container">
+        <div class="well well-sm">
+          <h3><strong>Contact Us</strong></h3>
+        </div>
+
+    	<div class="row">
+    	  <div class="col-md-7">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3736489.7218514383!2d90.21589792292741!3d23.857125486636733!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1506502314230" width="100%" height="315" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+
+          <div class="col-md-5">
+              <h4><strong>Get in Touch</strong></h4>
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" name="" value="" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="" value="" placeholder="E-mail">
+              </div>
+              <div class="form-group">
+                <input type="tel" class="form-control" name="" value="" placeholder="Phone">
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="" rows="3" placeholder="Message"></textarea>
+              </div>
+              <button class="btn btn-secondary" type="submit" name="button">
+                  <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  -->
+    {% endblock content%}
+
+<script type="text/javascript" href="{% static 'url_app/js/jquery.js'%}"></script>
+<script type="text/javascript" href="{% static 'url_app/js/bootstrap/js/bootstrap.min.js'%}"></script>
+  </body>
+</html>

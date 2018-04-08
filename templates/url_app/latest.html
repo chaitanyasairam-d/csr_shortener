@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'url_app/home.html' %}
+{% load staticfiles %}
+
+    {% block content%}
+
+      <center>
+        <div class="container">
+        <h1>Your Shortern URL</h1><br>
+        <h2>link:-<a style="color:white;"href="http://{{short_url}}" target="_blank">{{short_url}}</a></h2><br>
+        </div>
+      <div class="container">
+
+        <button class="btn btn-secondary"><a style="color:white;text-decoration: none;"href="{% url 'home'%}">Shortern Another URL</a></button>
+
+      </div>
+    </center>
+
+
+  <div class="container">
+
+    <h4>Thank you For Using Our Product</h4>
+
+  </div>
+{% endblock content %}
