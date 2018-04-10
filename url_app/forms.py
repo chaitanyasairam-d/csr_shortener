@@ -18,6 +18,7 @@ class NewShortLink(forms.ModelForm):
             sc_exists = UrlShortener.objects.filter(shortcode=shortcode).exists()
             if sc_exists:
                 raise forms.ValidationError("Shortcode Already Exists!!!!!")
+
         class Meta():
             model = UrlShortener
             exclude = ['active']
