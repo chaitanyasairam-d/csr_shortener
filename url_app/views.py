@@ -1,9 +1,8 @@
 from django.shortcuts import render,get_object_or_404
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from .models import UrlShortener
 from django.views import View
 from .forms import NewShortLink
-from django import forms
 from .utils import create_shortcode
 # Create your views here.
 def index(request,shortcode=None):
@@ -21,12 +20,14 @@ class HomeView(View):
         if user_shortcode is None or user_shortcode is '':
             user_shortcode = create_shortcode(12)
             UrlShortener.objects.get_or_create(url=user_url,shortcode=user_shortcode)
-            user_data = '127.0.0.1:8000/'+user_shortcode
+            user_data = 'csr-shortener.heroku.com/'+user_shortcode
             return render(request,'url_app/latest.html',{'short_url':user_data})
+        elif ' ' in user_shortcode:
+            return render(request,'url_app/error.html')
         else:
             sc_exists = UrlShortener.objects.filter(shortcode=user_shortcode).exists()
             if not sc_exists:
                 UrlShortener.objects.get_or_create(url=user_url,shortcode=user_shortcode)
-                user_data = '127.0.0.1:8000/'+user_shortcode
+                user_data = 'csr-shortener.heroku.com/'+user_shortcode
                 return render(request,'url_app/latest.html',{'short_url':user_data})
         return render(request,'url_app/home.html',{'form':form})
