@@ -25,7 +25,7 @@ SECRET_KEY = '6e&^gd%elx&2to=x03d6gmaq3jj29w_=6wi-bap5zo67folx&l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','www.chaitu.com']
+ALLOWED_HOSTS = ['csr45.herokuapp.com']
 
 
 # Application definition
@@ -76,13 +76,19 @@ WSGI_APPLICATION = 'project_url.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+#DATABASES = {
+ #   'default': {
+ #       'ENGINE': 'django.db.backends.sqlite3',
+ #       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+  #  }
+#}
+import dj_database_url
 
+  DATABASES = {
+      'default': dj_database_url.config(
+          default='sqlite:////{0}'.format(os.path.join(BASE_DIR, 'db.sqlite3'))
+      )
+  }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
