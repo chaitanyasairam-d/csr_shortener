@@ -11,4 +11,5 @@ In two ways you can generate short url
 
 Check below for demo how it will work
 
-Link:-http://chaitanyasairam.pythonanywhere.com
+Link:-https://www.dcsr.tk/
+NOTE: dont forgot to prefix www if not it will show error.it is temporary only
