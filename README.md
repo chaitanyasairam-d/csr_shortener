@@ -11,4 +11,4 @@ In two ways you can generate short url
 
 Check below for demo how it will work
 
-currently this site is under repair
+https://chaitanyasairam.pythonanywhere.com/
