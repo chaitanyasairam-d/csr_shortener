@@ -10,7 +10,7 @@ Faker==0.8.12
 gunicorn==19.7.1
 Markdown==2.6.11
 phonenumberslite==8.9.2
-Pillow==5.0.0
+Pillow==7.1.0
 pipfile==0.0.2
 psycopg2==2.7.4
 python-dateutil==2.7.0
