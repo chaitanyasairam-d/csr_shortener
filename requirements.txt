@@ -1,4 +1,4 @@
-Babel==2.5.3
+Babel==2.9.1
 certificate==2018.1.18
 dj-database-url==0.5.0
 Django==2.2.13
