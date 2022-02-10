@@ -1,7 +1,7 @@
 Babel==2.5.3
 certificate==2018.1.18
 dj-database-url==0.5.0
-Django==2.2.13
+Django==2.2.27
 django-hosts==3.0
 django-markdown==0.8.4
 django-phonenumber-field==2.0.0
